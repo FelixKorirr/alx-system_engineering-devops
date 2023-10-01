@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #This script displays "Best School" 10 times
-count=1
-until [ $count -ge 11 ]
+count=0
+until [ $count -ge 10 ]
 do
-    echo $count:"Best School"
+    echo "Best School"
     ((count++))
 done
