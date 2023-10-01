@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#This script displays contents of current directory
+for file in *
+do
+    if [[ -f "$file" && "$file" != */.* ]]
+    then
+        echo "$file" | cut -d '-' -f 2-
+    fi
+done
