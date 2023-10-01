@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 #This script displays "Best School" 10 times
+
+#Initialize count
 count=1
+
+#Start a while loop that runs as long as count is less than 5
 while [ $count -le 10 ]
 do
     echo "Best School"
