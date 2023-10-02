@@ -5,6 +5,6 @@ text="To infinity and beyond"
 
 while true
 do
-    echo $text
+    echo "$text"
     sleep 2
 done
