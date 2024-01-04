@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
-# A script that installs nginx server on an ubuntu linux distro.
 
-sudo apt-get update -y
+sudo apt update -y
 
-sudo apt-get install -y nginx
+sudo apt install -y nginx
+
+sudo sed -i 's/\blisten 80;/listen 80 default_server;/g' /etc/nginx/sites-available/default
+
+sudo nginx -s reload
 
 echo 'Hello World!' > /var/www/html/index.html
-
-sudo service nginx restart
