@@ -9,12 +9,8 @@ sudo apt-get install nginx -y
 
 sudo service nginx start
 
-sudo ufw allow 'Nginx HTTP'
-
 sudo chown -R "$USER":"$USER" /var/www/html
 sudo chmod -R 755 /var/www
-
-cp /var/www/html/index.html /var/www/html/index.html.bckp
 
 echo -e "Hello World!" > /var/www/html/index.html
 
