@@ -4,7 +4,7 @@
 sudo apt-get update
 sudo apt-get install -y nginx
 
-echo "Hello World!" | sudo tee /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
 
 my_string="server_name _;\n\trewrite ^\/redirect_me https:\/\/github.com\/FelixKorirr permanent;"
 sudo sed -i "s/server_name _;/$my_string/" /etc/nginx/sites-enabled/default
