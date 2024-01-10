@@ -2,7 +2,7 @@
 # configure a Haproxy as a load balancer
 
 sudo apt-get -y update
-apt-get -y install haproxy
+sudo apt-get -y install haproxy
 
 echo '
 frontend devkorir.tech
@@ -15,4 +15,4 @@ backend web_servers
         server 323183-web-02 52.86.109.248
 ' >> /etc/haproxy/haproxy.cfg
 
-service haproxy restart
+sudo service haproxy restart
