@@ -6,7 +6,8 @@ sudo apt-get -y update
 sudo apt-get -y install haproxy
 
 # Configure haproxy config file
-echo '
+server_config=\
+"
 frontend devkorir.tech
         bind 0:80
         default_backend web_servers
@@ -15,7 +16,14 @@ backend web_servers
         balance roundrobin
         server 323183-web-01 100.25.102.196
         server 323183-web-02 52.86.109.248
-' >> /etc/haproxy/haproxy.cfg
+" 
+echo $server_config | sudo tee -a /etc/haproxy/haproxy.cfg
+
+# enable haproxy to be started by init script
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
+
+# Testing the HAproxy configuration file
+sudo haproxy -c -f /etc/haproxy/haproxy.cfg
 
 # Restart haproxy service
 sudo service haproxy restart
