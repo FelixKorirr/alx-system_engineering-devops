@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
-# configure a Haproxy as a load balancer
+# configure a Haproxy on a load balancer
 
+# Install haproxy
 sudo apt-get -y update
 sudo apt-get -y install haproxy
 
+# Configure haproxy config file
 echo '
 frontend devkorir.tech
         bind 0:80
@@ -15,4 +17,5 @@ backend web_servers
         server 323183-web-02 52.86.109.248
 ' >> /etc/haproxy/haproxy.cfg
 
+# Restart haproxy service
 sudo service haproxy restart
