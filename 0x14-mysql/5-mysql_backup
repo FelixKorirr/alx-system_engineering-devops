@@ -3,7 +3,7 @@
 # and compress them using tar.gz format before saving
 
 # Generate the current date
-current_date = $(date +"%d-%m-%Y")
+current_date=$(date +"%d-%m-%Y")
 
 # Create mysqldump of all my databases 
 sudo mysqldump -u root --password="$1" --all-databases > backup.sql
