@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
+# This bas script creates mysqldump of all my databases
+# and compress them using tar.gz format before saving
 
-#Generate the current date
+# Generate the current date
 current_date = (date + "%d-%m-%Y")
 
-#create mysqldump of all my databases 
+# Create mysqldump of all my databases 
 sudo mysqldump -u root -p --all-databases > backup.sql
 
-#Compress the mysqldump file
-tar -czvf $current_date.tar.gz  backup.sql
+# Compress the mysqldump file
+tar -czvf "$current_date.tar.gz" backup.sql
