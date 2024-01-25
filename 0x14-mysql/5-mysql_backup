@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This bas script creates mysqldump of all my databases
+# This bash script creates mysqldump of all my databases
 # and compress them using tar.gz format before saving
 
 # Generate the current date
