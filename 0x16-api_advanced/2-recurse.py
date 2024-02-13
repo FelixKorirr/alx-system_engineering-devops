@@ -27,6 +27,6 @@ v1.0.0 (by /u/firdaus_cartoon_jr)"
     for x in result.get("children"):
         hot_list.append(x.get("data").get("title"))
 
-    if after != None:
+    if after is not None:
         return recurse(subreddit, hot_list, after, count)
     return hot_list
