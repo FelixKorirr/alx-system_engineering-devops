@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""This script returns the number_of_subscribers for 
-    a given subreddit"""
+"""This script returns the number_of_subscribers for
+a given subreddit"""
 
 import requests
 from sys import argv
