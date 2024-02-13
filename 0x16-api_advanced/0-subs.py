@@ -1,16 +1,18 @@
 #!/usr/bin/python3
-'''This script returns the number_of_subscribers for
-a given subreddit'''
+'''
+    this module contains the function number_of_subscribers
+'''
 import requests
 from sys import argv
 
 
 def number_of_subscribers(subreddit):
-    '''Returns the number of subscribers for a subreddit'''
-
-    usr = {'User-Agent': 'Lizzie'}
+    '''
+        returns the number of subscribers for a given subreddit
+    '''
+    user = {'User-Agent': 'Lizzie'}
     url = requests.get('https://www.reddit.com/r/{}/about.json'
-                       .format(subreddit), headers=usr).json()
+                       .format(subreddit), headers=user).json()
     try:
         return url.get('data').get('subscribers')
     except Exception:
