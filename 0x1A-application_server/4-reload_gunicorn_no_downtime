@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Reload gunicorn instance service
+grep gunicorn | xargs kill -HUP
